@@ -9,6 +9,7 @@
         <span id="message"></span>
         <script>
             var message = "How are you today?";
+            var name = prompt("What is your name?");
             
             function alertMessage(myMessage){
                 alert(myMessage);
@@ -17,6 +18,14 @@
 
             alertMessage(message);
             alertMessage("John Cena's Dad");
+            alertMessage(name);
+
+            setTimeout(function(){console.log('Third'), 3000});
+            setTimeout(function(){console.log('Second'), 300});
+            console.log('First')
+
+
+
         </script>
         <script src="scripts/script.js"></script>
     </body>

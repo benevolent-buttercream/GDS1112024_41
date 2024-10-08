@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Lab</title>
+</head>
+<body>
+
+    <h1>Button Clicker</h1>
+    <h3 id="output">0</h3>
+    <input type="button" value="Click Me!" id="btn"><br><br>
+    <input type="button" value="Reset Clicks" id="reset-btn"><br><br>
+    <!-- <input type="button" value="Break Clicker Counter" id="break-click"><br><br> -->
+    <input type="text" name="upgrade" id="upgrade">
+    <input type="button" value="Upgrade Clicker" id="upgrade-btn">
+
+    <script>
+
+        // In Document JavaScript
+        var myButton = document.querySelector("#btn");
+        var resetButton = document.querySelector("#reset-btn");
+        // var clickerCounterBreaker = document.querySelector("#break-click");
+        var clickOutput = document.querySelector("#output");
+        var clickUpgrade = document.querySelector("#upgrade-btn");
+        var clicks = 0;
+        var clickByAmout = 1;
+        
+        // Add am Evemt Listener
+        myButton.addEventListener("click", function(){
+            // alert("Here is my message.")
+            clicks += clickByAmout;
+            // Refresh Clicks
+            clickOutput.innerHTML = clicks;
+        });
+        
+        resetButton.addEventListener("click", function(){
+            clicks = 0;
+            // Refresh Clicks
+            clickOutput.innerHTML = clicks;
+            clickByAmout = 1;
+        });
+
+        // clickerCounterBreaker.addEventListener("click", function(){
+        //     clicks = "mister burger broke your clicker! Get ready for breakage!"
+        //     // Refresh Clicks
+        //     clickOutput.innerHTML = clicks;
+        // });
+
+        clickUpgrade.addEventListener("click", function(){
+            clickByAmout = Number(document.querySelector("#upgrade").value);
+        });
+
+    </script>
+</body>
+</html>
