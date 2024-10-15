@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Week 3 Lab Drawing on the HTML Canvas</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Week 3 HTML Canvas Lab</h1>
+        <canvas id="canvas" width="800" height="600" style="border: 1px solid black;">
+            Please check your browser settings.
+        </canvas>
+        <script>
+            // Reference to the canvas element
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+
+            ctx.fillStyle = "#ff0000";
+            
+            //ctx.fillRect(x pos, y pos, width, height) for rectangle shape
+            ctx.fillRect(20,20, 50, 100);
+            ctx.fillStyle = "#0000ff";
+            ctx.fillRect(80,20, 50, 100);
+            
+            //This makes an outline for the box
+            ctx.strokeStyle = "#00ff00";
+            ctx.lineWidth = "10";
+            ctx.strokeRect(80,20, 50, 100);
+            
+            //Let's make some lines
+            ctx.strokeStyle = "yellow";
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(800,600);
+            ctx.lineTo(800,0);
+            ctx.lineTo(0,600);
+            ctx.lineTo(0,0);
+            ctx.stroke();
+            
+            //A new line
+            ctx.strokeStyle = "#0000ff";
+            ctx.beginPath();
+            ctx.moveTo(400,0);
+            ctx.lineTo(400,600);
+            ctx.stroke();
+
+            ctx.strokeStyle = "#ff00ff";
+            ctx.fillStyle = "cyan";
+            ctx.beginPath();
+            ctx.moveTo(400, 20);
+            ctx.lineTo(450, 100);
+            ctx.lineTo(350, 100);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            //Let's draw a circle
+            ctx.beginPath();
+
+            //ctx.arc(x pos, y pos, radius, start angle, end angle, is clockwise)
+            ctx.arc(400, 300, 100, 0, 3*Math.PI/2, false);
+            ctx.lineTo(400,300);//Don't include this on assignment
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+        </script>
+    </body>
+</html>
