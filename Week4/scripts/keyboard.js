@@ -1,4 +1,4 @@
-r// Canvas Stuff
+// Canvas Stuff
 var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
 var fps = 1000/60;
