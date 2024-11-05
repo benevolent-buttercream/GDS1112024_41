@@ -22,6 +22,7 @@ class GameObject
     }
 
     //Draws a rectangle 
+
     render()
     {
         ctx.save();
@@ -29,6 +30,18 @@ class GameObject
             ctx.translate(this.x, this.y)
             ctx.rotate(this.angle*Math.PI/180)
             ctx.fillRect(-this.w/2, -this.h/2, this.w, this.h)
+        ctx.restore();
+    }
+
+    //Draws an image
+
+    renderImage(image)
+    {
+        ctx.save();
+            ctx.fillStyle = this.color
+            ctx.translate(this.x, this.y)
+            ctx.rotate(this.angle*Math.PI/180)
+            ctx.drawImage(image,-this.w/2, -this.h/2, this.w, this.h)
         ctx.restore();
     }
 
